@@ -5,7 +5,7 @@ function Header(){
   return (
     <React.Fragment>
     <h1>Help Queue</h1>
-    <img src={flexImage} alt="flexing" />
+    <img class= "scale-up-left" src={flexImage} alt="flexing" />
     </React.Fragment>
   );
 }
