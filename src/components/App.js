@@ -7,7 +7,6 @@ function App(){
     <React.Fragment>
       <Header />
       <TicketControl />
-      {/* This is a JSX comment. */}
       <hr/>
     </React.Fragment>
   );

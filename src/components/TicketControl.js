@@ -6,7 +6,6 @@ import EditTicketForm from './EditTicketForm';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 
-
 class TicketControl extends React.Component {
 
   constructor(props) {
@@ -32,12 +31,6 @@ class TicketControl extends React.Component {
     }
   }
 
-  // handleAddingNewTicketToList = (newTicket) => {
-  //   const newMainTicketList = this.state.mainTicketList.concat(newTicket);
-  //   this.setState({mainTicketList: newMainTicketList,
-  //                 formVisibleOnPage: false });
-  // }
-
   handleAddingNewTicketToList = (newTicket) => {
     const { dispatch } = this.props;
     const { id, names, location, issue } = newTicket;
@@ -57,19 +50,6 @@ class TicketControl extends React.Component {
     this.setState({selectedTicket: selectedTicket});
   }
 
-  // handleChangingSelectedTicket = (id) => {
-  //   const selectedTicket = this.state.mainTicketList.filter(ticket => ticket.id === id)[0];
-  //   this.setState({selectedTicket: selectedTicket});
-  // }
-
-  // handleDeletingTicket = (id) => {
-  //   const newMainTicketList = this.state.mainTicketList.filter(ticket => ticket.id !== id);
-  //   this.setState({
-  //     mainTicketList: newMainTicketList,
-  //     selectedTicket: null
-  //   });
-  // }
-
   handleDeletingTicket = (id) => {
     const { dispatch } = this.props;
     const action = {
@@ -84,17 +64,6 @@ class TicketControl extends React.Component {
     console.log("handleEditClick reached!");
     this.setState({editing: true});
   }
-
-  // handleEditingTicketInList = (ticketToEdit) => {
-  //   const editedMainTicketList = this.state.mainTicketList
-  //     .filter(ticket => ticket.id !== this.state.selectedTicket.id)
-  //     .concat(ticketToEdit);
-  //   this.setState({
-  //       mainTicketList: editedMainTicketList,
-  //       editing: false,
-  //       selectedTicket: null
-  //     });
-  // }
 
   handleEditingTicketInList = (ticketToEdit) => {
     const { dispatch } = this.props;
@@ -148,8 +117,6 @@ const mapStateToProps = state => {
     mainTicketList: state
   }
 }
-
-// Note: we are now passing mapStateToProps into the connect() function.
 
 TicketControl = connect(mapStateToProps)(TicketControl);
 
